@@ -1,0 +1,2 @@
+docker exec -it puor22_1m_docker-spark-master-1 bash
+spark-sumbit python_app/my_spark.py
