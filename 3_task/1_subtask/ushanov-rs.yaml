@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ushanov-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ushanov
+  template:
+    metadata:
+      labels:
+        app: ushanov
+    spec:
+      containers:
+      - name: ushanov
+        image: nyushanov/ushanov-app:v1
