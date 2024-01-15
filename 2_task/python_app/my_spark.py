@@ -25,8 +25,8 @@ df_prices = (
 df_prices.createOrReplaceTempView("prices")
 
 result_df = spark.sql("""
-    SELECT property_type, location, bedrooms, CEILING(AVG(price)) as average_price
+    SELECT location, bedrooms, CEILING(AVG(price)) as average_price
     FROM prices
-    GROUP BY property_type, location, bedrooms
+    GROUP BY location, bedrooms
 """)
 result_df.show()
